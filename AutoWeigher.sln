@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWeigher", "AutoWeigher.csproj", "{6FD4131C-16EA-4939-A76B-1EB77E5C096E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWeigher", "AutoWeigher\AutoWeigher.csproj", "{6FD4131C-16EA-4939-A76B-1EB77E5C096E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWeigherMain", "AutoWeigherMain\AutoWeigherMain.csproj", "{0A44A285-AA07-4701-8DFD-9493E2C64383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6FD4131C-16EA-4939-A76B-1EB77E5C096E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FD4131C-16EA-4939-A76B-1EB77E5C096E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FD4131C-16EA-4939-A76B-1EB77E5C096E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A44A285-AA07-4701-8DFD-9493E2C64383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A44A285-AA07-4701-8DFD-9493E2C64383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A44A285-AA07-4701-8DFD-9493E2C64383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A44A285-AA07-4701-8DFD-9493E2C64383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
