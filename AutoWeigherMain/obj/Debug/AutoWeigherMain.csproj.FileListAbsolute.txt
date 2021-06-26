@@ -1,0 +1,14 @@
+D:\course\course\AutoWeigherMain\bin\Debug\AutoWeigherMain.exe.config
+D:\course\course\AutoWeigherMain\bin\Debug\AutoWeigherMain.exe
+D:\course\course\AutoWeigherMain\bin\Debug\AutoWeigherMain.pdb
+D:\course\course\AutoWeigherMain\bin\Debug\Newtonsoft.Json.dll
+D:\course\course\AutoWeigherMain\bin\Debug\Newtonsoft.Json.xml
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.csprojAssemblyReference.cache
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.AddThings.resources
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.Form1.resources
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.Properties.Resources.resources
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.csproj.GenerateResource.cache
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.csproj.CoreCompileInputs.cache
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.csproj.CopyComplete
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.exe
+D:\course\course\AutoWeigherMain\obj\Debug\AutoWeigherMain.pdb
