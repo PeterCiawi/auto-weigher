@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AutoWeigherMain.Properties {
+namespace AutoWeigher.Properties {
     using System;
     
     

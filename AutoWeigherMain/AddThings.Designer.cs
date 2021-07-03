@@ -1,4 +1,4 @@
-﻿namespace AutoWeigherMain
+﻿namespace AutoWeigher
 {
     partial class AddThings
     {
