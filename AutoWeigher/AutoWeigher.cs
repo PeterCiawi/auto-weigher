@@ -46,7 +46,7 @@ namespace AutoWeigher
                 Thread thread = new Thread(new ThreadStart(ReadLineFunction));
                 thread.Start();
             }
-            public static string[] PortName
+            public static string[] PortNames
             {
                 get
                 {
