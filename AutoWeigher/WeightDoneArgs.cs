@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace AutoWeigher
 {
-    public class WeightDoneArgs: EventArgs
+    namespace Lib
     {
-       public double Weight { get; set; }
+       public class WeightDoneArgs: EventArgs
+       {
+          public double Weight { get; set; }
+       }
     }
 }
