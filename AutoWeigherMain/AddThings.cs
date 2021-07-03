@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoWeigherMain
+namespace AutoWeigher
 {
     public partial class AddThings : Form
     {

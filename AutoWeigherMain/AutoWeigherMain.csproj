@@ -95,5 +95,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoWeigher\AutoWeigher.csproj">
+      <Project>{6fd4131c-16ea-4939-a76b-1eb77e5c096e}</Project>
+      <Name>AutoWeigher</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

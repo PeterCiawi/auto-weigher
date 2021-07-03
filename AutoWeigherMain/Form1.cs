@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace AutoWeigherMain
+
+namespace AutoWeigher
 {
+    namespace Main
+    {
+
     public partial class Form1 : Form
     {
         Queue<Tuple<string, double, double?>> antrian = new Queue<Tuple<string, double, double?>>();
-        void WeightDone(this , );
+
+        
+
+        void WeightDone(object a)
+        {
+
+        }
         
         public Form1()
         {
@@ -58,5 +68,6 @@ namespace AutoWeigherMain
             Resep YgDipilih =(Resep)cbNama.SelectedItem;
             nmAngka.Value = Convert.ToDecimal(YgDipilih.Code);
         }
+    }
     }
 }
