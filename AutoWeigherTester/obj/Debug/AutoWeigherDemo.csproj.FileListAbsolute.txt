@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\obj\Debug\AutoWeigherDemo.csprojAssemblyReference.cache
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\obj\Debug\AutoWeigherDemo.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\obj\Debug\AutoWeigherTester.exe
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\obj\Debug\AutoWeigherTester.pdb
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\bin\Debug\AutoWeigherTester.exe.config
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\bin\Debug\AutoWeigherTester.exe
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\bin\Debug\AutoWeigherTester.pdb
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\bin\Debug\AutoWeigher.dll
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\bin\Debug\AutoWeigher.pdb
+C:\Users\User\source\repos\auto-weigher\AutoWeigherTester\obj\Debug\AutoWeigherDemo.csproj.CopyComplete
