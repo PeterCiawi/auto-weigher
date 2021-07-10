@@ -20,7 +20,7 @@ namespace AutoWeigher
                 port = new SerialPort(portName);
                 port.Open();
             }
-            void Weight(double weight)
+            public void  Weight(double weight)
             {
                 port.Write($"<{weight}>");
             }
