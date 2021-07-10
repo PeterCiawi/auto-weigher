@@ -9,26 +9,40 @@ namespace AutoWeigher
     namespace Main
     {
 
-        public partial class Form1 : Form
+        public partial class Mains : Form
         {
             Queue<Tuple<string, double, double?>> antrian = new Queue<Tuple<string, double, double?>>();
 
             Lib.AutoWeigher weigher;
+            
 
-            void WeightDone(object a)
+            
+
+            public Mains(Lib.AutoWeigher Weigher)
             {
-
+                
+                weigher.WeightDone += Weigher_WeightDone;
+                InitializeComponent();
             }
 
-            public Form1()
+            private void Weigher_WeightDone(object sender, WeightDoneArgs e)
             {
-                Lib.AutoWeigher.PortNames();
-
-                InitializeComponent();
+                var thing = new ListViewItem();
+                var first = antrian.Dequeue();
+                Tuple<string, double, double?> dataSelesai = new Tuple<string, double, double?>(first.Item1,
+                    first.Item2, e.Weight);
+                thing.Text = first.Item1;
+                thing.SubItems.Add(first.Item2.ToString());
+                thing.SubItems.Add(first.Item3.ToString());
+                listView2.Items.Add(thing);
+                
             }
 
             private void btnTmbh_Click(object sender, EventArgs e)
             {
+                
+
+
                 AddThings add = new AddThings();
                 add.ShowDialog();
                 if (add.DialogResult == DialogResult.OK)
@@ -39,8 +53,8 @@ namespace AutoWeigher
 
             private void btnAdd_Click(object sender, EventArgs e)
             {
+                
                 var item = new ListViewItem();
-                var thing = new ListViewItem();
                 Tuple<string, double, double?> dataTimbang = new Tuple<string, double, double?>(cbNama.Text,
                     Convert.ToDouble(nmAngka.Value), null);
                 antrian.Enqueue(dataTimbang);
@@ -48,14 +62,8 @@ namespace AutoWeigher
                 string Value = Convert.ToString(nmAngka.Value);
                 item.SubItems.Add(Value);
                 listView1.Items.Add(item);
-
-                var first = antrian.Dequeue();
-                Tuple<string, double, double?> dataSelesai = new Tuple<string, double, double?>(first.Item1,
-                    first.Item2, null);
-                thing.Text = first.Item1;
-                thing.SubItems.Add(first.Item2.ToString());
-                thing.SubItems.Add(first.Item3.ToString());
-                listView2.Items.Add(thing);
+                
+                
 
 
 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoWeigher
+namespace AutoWeigher.Main
 {
     public partial class AddThings : Form
     {
@@ -33,6 +33,11 @@ namespace AutoWeigher
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void AddThings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

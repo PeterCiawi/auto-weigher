@@ -1,4 +1,4 @@
-﻿namespace AutoWeigher
+﻿namespace AutoWeigher.Main
 {
     partial class AddThings
     {
@@ -104,6 +104,7 @@
             this.Name = "AddThings";
             this.Text = "AddThings";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.AddThings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmAngka)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
