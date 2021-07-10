@@ -20,9 +20,9 @@ namespace AutoWeigher.Main
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            Weigher = new Lib.AutoWeigher(cbSelect.Text);
             Mains adds = new Mains();
             adds.ShowDialog();
+            Weigher = new Lib.AutoWeigher(cbSelect.Text);
             if (adds.DialogResult == DialogResult.OK)
             {
 

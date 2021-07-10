@@ -62,7 +62,10 @@ namespace AutoWeigher
                 string Value = Convert.ToString(nmAngka.Value);
                 item.SubItems.Add(Value);
                 listView1.Items.Add(item);
-                
+                string berat = Convert.ToString(weigher);
+                double nm = Convert.ToDouble(nmAngka.Value);
+                Lib.AutoWeigher weight = new Lib.AutoWeigher(berat);
+                weigher.Weight(nm);
                 
 
 
