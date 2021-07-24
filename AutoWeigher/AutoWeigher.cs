@@ -20,7 +20,7 @@ namespace AutoWeigher
                 port = new SerialPort(portName);
                 port.Open();
             }
-            public void  Weight(double weight)
+            public void Weight(double weight)
             {
                 port.Write($"<{weight}>");
             }
@@ -32,18 +32,21 @@ namespace AutoWeigher
 
                 while (true)
                 {
-                    string n = Console.ReadLine();
-                    n.Remove('<');
-                    n.Remove('>');
-                    double weight = Convert.ToDouble(n);
-                    WeightDoneArgs args = new WeightDoneArgs();
-                    args.Weight = weight;
-                    WeightDone?.Invoke(this, args);
+                    string n = port.ReadLine();
+                    n.Trim();
+                    if (n.Contains('<'))
+                    {
+                        n = n.Substring(1 ,n.Length - 3);                     
+                        double weight = double.Parse(n);
+                        WeightDoneArgs args = new WeightDoneArgs();
+                        args.Weight = weight;
+                        WeightDone?.Invoke(this, args);
+                    }
                 }
             }
             public void Begin()
             {
-                Thread thread = new Thread(new ThreadStart(ReadLineFunction));
+                Thread thread = new Thread(new ThreadStart(new Action(() => ReadLineFunction())));
                 thread.Start();
             }
             public static string[] PortNames
