@@ -14,29 +14,42 @@ namespace AutoWeigher.Main
     {
         public Lib.AutoWeigher Weigher { get; set; }
         public SelectWeight()
+          
         {
             InitializeComponent();
+                btnOk.Enabled = false;
+            
+
+            
+
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            Mains adds = new Mains();
-            adds.ShowDialog();
             Weigher = new Lib.AutoWeigher(cbSelect.Text);
-            if (adds.DialogResult == DialogResult.OK)
+            Mains adds = new Mains(Weigher);
+            adds.Show();
+            
+            
+            if (cbSelect.Text == "")
             {
-
+                this.Controls.Add(btnOk);
             }
+            
+                
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+
         }
 
         private void cbSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            btnOk.Enabled = true;
+            this.Controls.Add(btnOk);
         }
     }
 }

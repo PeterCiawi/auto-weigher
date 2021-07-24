@@ -13,27 +13,32 @@ namespace AutoWeigher
         {
             Queue<Tuple<string, double, double?>> antrian = new Queue<Tuple<string, double, double?>>();
 
-            Lib.AutoWeigher weigher;
+            Lib.AutoWeigher weigher ;
+            
+            
+
+          
             
 
             
 
             public Mains(Lib.AutoWeigher Weigher)
             {
-                
+                weigher = Weigher;
                 weigher.WeightDone += Weigher_WeightDone;
                 InitializeComponent();
             }
 
             private void Weigher_WeightDone(object sender, WeightDoneArgs e)
             {
+                
                 var thing = new ListViewItem();
                 var first = antrian.Dequeue();
                 Tuple<string, double, double?> dataSelesai = new Tuple<string, double, double?>(first.Item1,
                     first.Item2, e.Weight);
                 thing.Text = first.Item1;
-                thing.SubItems.Add(first.Item2.ToString());
-                thing.SubItems.Add(first.Item3.ToString());
+                thing.SubItems.Add(first.Item2.ToString()+"Kg");
+                thing.SubItems.Add(first.Item3.ToString()+"kg");
                 listView2.Items.Add(thing);
                 
             }
@@ -60,12 +65,13 @@ namespace AutoWeigher
                 antrian.Enqueue(dataTimbang);
                 item.Text = cbNama.Text;
                 string Value = Convert.ToString(nmAngka.Value);
-                item.SubItems.Add(Value);
+                item.SubItems.Add(Value+"kg");
                 listView1.Items.Add(item);
                 string berat = Convert.ToString(weigher);
                 double nm = Convert.ToDouble(nmAngka.Value);
                 Lib.AutoWeigher weight = new Lib.AutoWeigher(berat);
                 weigher.Weight(nm);
+               
                 
 
 
@@ -77,6 +83,11 @@ namespace AutoWeigher
             {
                 Resep YgDipilih = (Resep)cbNama.SelectedItem;
                 nmAngka.Value = Convert.ToDecimal(YgDipilih.Code);
+            }
+
+            private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
             }
         }
     }

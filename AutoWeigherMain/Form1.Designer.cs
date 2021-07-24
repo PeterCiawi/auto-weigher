@@ -62,6 +62,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Nama
             // 
@@ -77,11 +78,11 @@
             // 
             // btnTmbh
             // 
-            this.btnTmbh.Location = new System.Drawing.Point(622, 82);
+            this.btnTmbh.Location = new System.Drawing.Point(599, 82);
             this.btnTmbh.Name = "btnTmbh";
-            this.btnTmbh.Size = new System.Drawing.Size(75, 23);
+            this.btnTmbh.Size = new System.Drawing.Size(98, 23);
             this.btnTmbh.TabIndex = 1;
-            this.btnTmbh.Text = "Tambahkan";
+            this.btnTmbh.Text = "Manage Bahan";
             this.btnTmbh.UseVisualStyleBackColor = true;
             this.btnTmbh.Click += new System.EventHandler(this.btnTmbh_Click);
             // 
@@ -91,7 +92,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "AddToList";
+            this.btnAdd.Text = "Timbang";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
