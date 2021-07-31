@@ -33,7 +33,7 @@ namespace AutoWeigher
                 while (true)
                 {
                     string n = port.ReadLine();
-                    n.Trim();
+                    n = n.Trim();
                     if (n.Contains('<'))
                     {
                         n = n.Substring(1 ,n.Length - 3);                     
