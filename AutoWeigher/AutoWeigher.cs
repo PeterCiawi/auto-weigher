@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 
 namespace AutoWeigher
@@ -27,6 +28,9 @@ namespace AutoWeigher
 
             public event EventHandler<WeightDoneArgs> WeightDone;
 
+            string pattern = @"<(?<One>\d+[,.]?\d+)>";
+            //pattern of regex
+
             private void ReadLineFunction()
             {
 
@@ -34,14 +38,16 @@ namespace AutoWeigher
                 {
                     string n = port.ReadLine();
                     n = n.Trim();
-                    if (n.Contains('<'))
+
+                    Match matches = Regex.Match(n, pattern);
+                    if (matches.Success)
                     {
-                        n = n.Substring(1 ,n.Length - 3);                     
-                        double weight = double.Parse(n);
+                        double weight = double.Parse(matches.Groups["One"].Value);
                         WeightDoneArgs args = new WeightDoneArgs();
                         args.Weight = weight;
                         WeightDone?.Invoke(this, args);
                     }
+                    //One = Group of Regex = 00.00(in number)
                 }
             }
             public void Begin()

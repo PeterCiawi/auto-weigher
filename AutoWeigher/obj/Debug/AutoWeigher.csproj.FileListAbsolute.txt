@@ -7,3 +7,12 @@ C:\Users\User\source\repos\AutoWeigher\obj\Debug\AutoWeigher.csproj.CoreCompileI
 C:\Users\User\source\repos\AutoWeigher\obj\Debug\AutoWeigher.csproj.CopyComplete
 C:\Users\User\source\repos\AutoWeigher\obj\Debug\AutoWeigher.dll
 C:\Users\User\source\repos\AutoWeigher\obj\Debug\AutoWeigher.pdb
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\bin\Debug\AutoWeigher.dll
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\bin\Debug\AutoWeigher.pdb
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\bin\Debug\System.IO.Ports.dll
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\bin\Debug\System.IO.Ports.xml
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\obj\Debug\AutoWeigher.csprojAssemblyReference.cache
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\obj\Debug\AutoWeigher.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\obj\Debug\AutoWeigher.csproj.CopyComplete
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\obj\Debug\AutoWeigher.dll
+C:\Users\User\source\repos\auto-weigher\AutoWeigher\obj\Debug\AutoWeigher.pdb
