@@ -31,15 +31,21 @@ namespace AutoWeigher
 
             private void Weigher_WeightDone(object sender, WeightDoneArgs e)
             {
-                
-                var thing = new ListViewItem();
-                var first = antrian.Dequeue();
-                Tuple<string, double, double?> dataSelesai = new Tuple<string, double, double?>(first.Item1,
-                    first.Item2, e.Weight);
-                thing.Text = first.Item1;
-                thing.SubItems.Add(first.Item2.ToString()+"g");
-                thing.SubItems.Add(first.Item3.ToString()+"g");
-                listView2.Items.Add(thing);
+                if (listView2.InvokeRequired)
+                {
+                    listView2.Invoke((MethodInvoker)delegate ()
+                    {
+                        var thing = new ListViewItem();
+                        var first = antrian.Dequeue();
+                        Tuple<string, double, double?> dataSelesai = new Tuple<string, double, double?>(first.Item1,
+                            first.Item2, e.Weight);
+                        thing.Text = first.Item1;
+                        thing.SubItems.Add(first.Item2.ToString() + "g");
+                        thing.SubItems.Add(first.Item3.ToString() + "g");
+                        listView2.Items.Add(thing);
+
+                    });
+                }
                 
             }
 

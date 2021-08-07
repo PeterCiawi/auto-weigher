@@ -101,6 +101,7 @@
             // 
             // nmAngka
             // 
+            this.nmAngka.DecimalPlaces = 2;
             this.nmAngka.Location = new System.Drawing.Point(668, 41);
             this.nmAngka.Name = "nmAngka";
             this.nmAngka.Size = new System.Drawing.Size(120, 20);
