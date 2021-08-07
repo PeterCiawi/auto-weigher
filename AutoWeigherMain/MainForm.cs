@@ -26,6 +26,7 @@ namespace AutoWeigher
             {
                 weigher = Weigher;
                 weigher.WeightDone += Weigher_WeightDone;
+                weigher.Begin();
                 InitializeComponent();
             }
 
