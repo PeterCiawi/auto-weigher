@@ -56,10 +56,6 @@ namespace AutoWeigher.Main
             // cbSelect
             // 
             this.cbSelect.FormattingEnabled = true;
-            this.cbSelect.Items.AddRange(new object[] {
-            "milo",
-            "erw",
-            "win"});
             this.cbSelect.Location = new System.Drawing.Point(56, 13);
             this.cbSelect.Name = "cbSelect";
             this.cbSelect.Size = new System.Drawing.Size(121, 21);
@@ -76,6 +72,7 @@ namespace AutoWeigher.Main
             this.Controls.Add(this.label1);
             this.Name = "SelectWeight";
             this.Text = "Select Weight";
+            this.Load += new System.EventHandler(this.SelectWeight_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

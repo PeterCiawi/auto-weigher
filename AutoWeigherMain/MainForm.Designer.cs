@@ -34,7 +34,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.Nama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Berat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Hasil = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTmbh = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbNama = new System.Windows.Forms.ComboBox();
@@ -52,8 +51,7 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Nama,
-            this.Berat,
-            this.Hasil});
+            this.Berat});
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 12);
@@ -71,10 +69,6 @@
             // Berat
             // 
             this.Berat.Text = "Berat";
-            // 
-            // Hasil
-            // 
-            this.Hasil.Text = "Hasil";
             // 
             // btnTmbh
             // 
@@ -189,7 +183,6 @@
             private System.Windows.Forms.Label label2;
             private System.Windows.Forms.ColumnHeader Nama;
             private System.Windows.Forms.ColumnHeader Berat;
-            private System.Windows.Forms.ColumnHeader Hasil;
             private System.Windows.Forms.ListView listView2;
             private System.Windows.Forms.ColumnHeader columnHeader1;
             private System.Windows.Forms.ColumnHeader columnHeader2;
