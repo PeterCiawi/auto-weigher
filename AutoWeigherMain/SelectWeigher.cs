@@ -51,5 +51,15 @@ namespace AutoWeigher.Main
             btnOk.Enabled = true;
             this.Controls.Add(btnOk);
         }
+
+        private void SelectWeight_Load(object sender, EventArgs e)
+        {
+            int x = 0;
+            for (int i = 0; i < AutoWeigher.Lib.AutoWeigher.PortNames.Length; i++)
+            {
+                cbSelect.Items.Add(AutoWeigher.Lib.AutoWeigher.PortNames[i]);
+                x = i;
+            }
+        }
     }
 }

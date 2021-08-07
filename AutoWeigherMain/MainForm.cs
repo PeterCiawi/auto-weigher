@@ -37,8 +37,8 @@ namespace AutoWeigher
                 Tuple<string, double, double?> dataSelesai = new Tuple<string, double, double?>(first.Item1,
                     first.Item2, e.Weight);
                 thing.Text = first.Item1;
-                thing.SubItems.Add(first.Item2.ToString()+"Kg");
-                thing.SubItems.Add(first.Item3.ToString()+"kg");
+                thing.SubItems.Add(first.Item2.ToString()+"g");
+                thing.SubItems.Add(first.Item3.ToString()+"g");
                 listView2.Items.Add(thing);
                 
             }
@@ -65,11 +65,11 @@ namespace AutoWeigher
                 antrian.Enqueue(dataTimbang);
                 item.Text = cbNama.Text;
                 string Value = Convert.ToString(nmAngka.Value);
-                item.SubItems.Add(Value+"kg");
+                item.SubItems.Add(Value+"g");
                 listView1.Items.Add(item);
                 string berat = Convert.ToString(weigher);
                 double nm = Convert.ToDouble(nmAngka.Value);
-                Lib.AutoWeigher weight = new Lib.AutoWeigher(berat);
+                
                 weigher.Weight(nm);
                
                 
