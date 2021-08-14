@@ -11,6 +11,7 @@ namespace AutoWeigher
        public class WeightDoneArgs: EventArgs
        {
           public double Weight { get; set; }
+          public bool IsWeighing { get; set; }
        }
     }
 }

@@ -15,6 +15,8 @@ namespace AutoWeigher
 
         public class AutoWeigher
         {
+            public bool IsWeighing { get; set; }
+
             SerialPort port;
             public AutoWeigher(string portName)
             {
@@ -23,8 +25,11 @@ namespace AutoWeigher
             }
             public void Weight(double weight)
             {
+                IsWeighing = true;
                 port.Write($"<{weight}>");
             }
+
+            
 
             public event EventHandler<WeightDoneArgs> WeightDone;
 
@@ -44,6 +49,7 @@ namespace AutoWeigher
                     {
                         double weight = double.Parse(matches.Groups["One"].Value);
                         WeightDoneArgs args = new WeightDoneArgs();
+                        IsWeighing = false;
                         args.Weight = weight;
                         WeightDone?.Invoke(this, args);
                     }
