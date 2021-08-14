@@ -25,9 +25,11 @@ namespace AutoWeigherTester
 
             autoWeigher.WeightDone += AutoWeigher_WeightDone;
 
-            bool a = true; 
+            bool a = true;
 
-            while (a)
+            
+
+            if(autoWeigher.IsWeighing == false)
             { 
             
                 if (n > 0 & n <= x + 1)
@@ -37,7 +39,7 @@ namespace AutoWeigherTester
 
                     autoWeigher.Weight(weight);
                     autoWeigher.Begin();
-                    a = false;
+                    
                 }
                 else
                 {
