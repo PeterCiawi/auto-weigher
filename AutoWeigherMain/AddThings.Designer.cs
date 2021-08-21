@@ -41,6 +41,11 @@
             // 
             this.nmAngka.DecimalPlaces = 2;
             this.nmAngka.Location = new System.Drawing.Point(73, 44);
+            this.nmAngka.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nmAngka.Name = "nmAngka";
             this.nmAngka.Size = new System.Drawing.Size(120, 20);
             this.nmAngka.TabIndex = 0;

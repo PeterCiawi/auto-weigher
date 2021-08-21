@@ -52,6 +52,7 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Nama,
             this.Berat});
+            this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 12);
@@ -103,6 +104,11 @@
             // 
             this.nmAngka.DecimalPlaces = 2;
             this.nmAngka.Location = new System.Drawing.Point(668, 41);
+            this.nmAngka.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nmAngka.Name = "nmAngka";
             this.nmAngka.Size = new System.Drawing.Size(120, 20);
             this.nmAngka.TabIndex = 4;
@@ -131,6 +137,7 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(210, 12);

@@ -98,10 +98,11 @@ namespace AutoWeigher
                 antrian.Enqueue(dataTimbang);
                 
                 UpdateList();
-                //if (!weigher.isweighting)
-                //{weight();
-                //}
-                Weight();
+                if (!weigher.IsWeighing)
+                {
+                    Weight();
+                }
+                
 
 
 
