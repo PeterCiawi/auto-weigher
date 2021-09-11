@@ -25,9 +25,6 @@ namespace AutoWeigherTester
 
             autoWeigher.WeightDone += AutoWeigher_WeightDone;
 
-            bool a = true;
-
-            
 
             if(autoWeigher.IsWeighing == false)
             { 
