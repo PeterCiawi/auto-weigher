@@ -13,31 +13,39 @@ namespace AutoWeigher.Main
     public partial class SelectWeight : Form
     {
         public Lib.AutoWeigher Weigher { get; set; }
-        public SelectWeight()
-          
+        
+
+
+        public SelectWeight() 
         {
+          
+        
             InitializeComponent();
                 btnOk.Enabled = false;
             
-
+        }
+        
+        
+        
             
 
-        }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
             Weigher = new Lib.AutoWeigher(cbSelect.Text);
             Mains adds = new Mains(Weigher);
+            this.Hide();
             adds.Show();
-            
-            
             if (cbSelect.Text == "")
             {
                 this.Controls.Add(btnOk);
             }
             
-                
             
+            
+            
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -60,6 +68,18 @@ namespace AutoWeigher.Main
                 cbSelect.Items.Add(AutoWeigher.Lib.AutoWeigher.PortNames[i]);
                 x = i;
             }
+        }
+
+        private void cbSelect_Click(object sender, EventArgs e)
+        {
+            cbSelect.Items.Clear();
+            int x = 0;
+            for (int i = 0; i < AutoWeigher.Lib.AutoWeigher.PortNames.Length; i++)
+            {
+                cbSelect.Items.Add(AutoWeigher.Lib.AutoWeigher.PortNames[i]);
+                x = i;
+            }
+
         }
     }
 }
