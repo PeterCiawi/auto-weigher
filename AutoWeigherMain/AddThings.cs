@@ -16,16 +16,22 @@ namespace AutoWeigher.Main
         public AddThings()
         {
             InitializeComponent();
+            btnOk.Enabled = false;
+           
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            
+            
             Resep resep = new Resep()
             {
                 Nama = txtNm.Text,
                 Code = Convert.ToDouble(nmAngka.Value)
             };
             ResepBaru = resep;
+            
+            
             this.DialogResult = DialogResult.OK;
 
         }
@@ -38,6 +44,27 @@ namespace AutoWeigher.Main
         private void AddThings_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNm_TextChanged(object sender, EventArgs e)
+        {
+            
+            decimal nol = 0M;
+            if (txtNm.Text != "" & nmAngka.Value != nol)
+            {
+                btnOk.Enabled = true;
+                
+            }
+        }
+
+        private void nmAngka_ValueChanged(object sender, EventArgs e)
+        {
+            decimal nol = 0M;
+            if (txtNm.Text != "" & nmAngka.Value != nol)
+            {
+                btnOk.Enabled = true;
+                
+            }
         }
     }
 }

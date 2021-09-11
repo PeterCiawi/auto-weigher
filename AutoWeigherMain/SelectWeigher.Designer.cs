@@ -61,12 +61,13 @@ namespace AutoWeigher.Main
             this.cbSelect.Size = new System.Drawing.Size(121, 21);
             this.cbSelect.TabIndex = 3;
             this.cbSelect.SelectedIndexChanged += new System.EventHandler(this.cbSelect_SelectedIndexChanged);
+            this.cbSelect.Click += new System.EventHandler(this.cbSelect_Click);
             // 
             // SelectWeight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 223);
+            this.ClientSize = new System.Drawing.Size(201, 70);
             this.Controls.Add(this.cbSelect);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label1);

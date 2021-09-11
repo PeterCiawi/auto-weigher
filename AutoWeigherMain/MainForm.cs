@@ -46,6 +46,7 @@ namespace AutoWeigher
                 weigher.WeightDone += Weigher_WeightDone;
                 weigher.Begin();
                 InitializeComponent();
+                btnAdd.Enabled = false;
             }
 
             private void Weigher_WeightDone(object sender, WeightDoneArgs e)
@@ -89,6 +90,7 @@ namespace AutoWeigher
                 {
                     cbNama.Items.Add(add.ResepBaru);
                 }
+                
             }
 
             private void btnAdd_Click(object sender, EventArgs e)
@@ -101,6 +103,10 @@ namespace AutoWeigher
                 if (!weigher.IsWeighing)
                 {
                     Weight();
+                }
+                if (cbNama.Text == "")
+                {
+                    this.Controls.Add(btnAdd);
                 }
                 
 
@@ -127,9 +133,21 @@ namespace AutoWeigher
             {
                 Resep YgDipilih = (Resep)cbNama.SelectedItem;
                 nmAngka.Value = Convert.ToDecimal(YgDipilih.Code);
+                btnAdd.Enabled = true;
+                this.Controls.Add(btnAdd);
             }
 
             private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
+            }
+
+            private void cbNama_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
+            }
+
+            private void nmAngka_ValueChanged(object sender, EventArgs e)
             {
 
             }

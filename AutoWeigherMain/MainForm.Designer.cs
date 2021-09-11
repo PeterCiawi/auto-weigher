@@ -73,9 +73,9 @@
             // 
             // btnTmbh
             // 
-            this.btnTmbh.Location = new System.Drawing.Point(599, 82);
+            this.btnTmbh.Location = new System.Drawing.Point(525, 67);
             this.btnTmbh.Name = "btnTmbh";
-            this.btnTmbh.Size = new System.Drawing.Size(98, 23);
+            this.btnTmbh.Size = new System.Drawing.Size(88, 23);
             this.btnTmbh.TabIndex = 1;
             this.btnTmbh.Text = "Manage Bahan";
             this.btnTmbh.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(713, 82);
+            this.btnAdd.Location = new System.Drawing.Point(627, 67);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(57, 23);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Timbang";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -94,29 +94,31 @@
             // cbNama
             // 
             this.cbNama.FormattingEnabled = true;
-            this.cbNama.Location = new System.Drawing.Point(667, 9);
+            this.cbNama.Location = new System.Drawing.Point(563, 12);
             this.cbNama.Name = "cbNama";
             this.cbNama.Size = new System.Drawing.Size(121, 21);
             this.cbNama.TabIndex = 3;
+            this.cbNama.SelectedIndexChanged += new System.EventHandler(this.cbNama_SelectedIndexChanged);
             this.cbNama.SelectedValueChanged += new System.EventHandler(this.cbNama_SelectedValueChanged);
             // 
             // nmAngka
             // 
             this.nmAngka.DecimalPlaces = 2;
-            this.nmAngka.Location = new System.Drawing.Point(668, 41);
+            this.nmAngka.Location = new System.Drawing.Point(564, 41);
             this.nmAngka.Maximum = new decimal(new int[] {
-            1000,
+            1000000,
             0,
             0,
             0});
             this.nmAngka.Name = "nmAngka";
             this.nmAngka.Size = new System.Drawing.Size(120, 20);
             this.nmAngka.TabIndex = 4;
+            this.nmAngka.ValueChanged += new System.EventHandler(this.nmAngka_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(609, 9);
+            this.label1.Location = new System.Drawing.Point(522, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 5;
@@ -125,7 +127,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(609, 41);
+            this.label2.Location = new System.Drawing.Point(522, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 6;
@@ -163,7 +165,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(690, 345);
+            this.ControlBox = false;
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

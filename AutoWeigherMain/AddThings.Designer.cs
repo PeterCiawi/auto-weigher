@@ -42,13 +42,14 @@
             this.nmAngka.DecimalPlaces = 2;
             this.nmAngka.Location = new System.Drawing.Point(73, 44);
             this.nmAngka.Maximum = new decimal(new int[] {
-            1000,
+            1000000000,
             0,
             0,
             0});
             this.nmAngka.Name = "nmAngka";
             this.nmAngka.Size = new System.Drawing.Size(120, 20);
             this.nmAngka.TabIndex = 0;
+            this.nmAngka.ValueChanged += new System.EventHandler(this.nmAngka_ValueChanged);
             // 
             // txtNm
             // 
@@ -56,6 +57,7 @@
             this.txtNm.Name = "txtNm";
             this.txtNm.Size = new System.Drawing.Size(120, 20);
             this.txtNm.TabIndex = 1;
+            this.txtNm.TextChanged += new System.EventHandler(this.txtNm_TextChanged);
             // 
             // lblJmlh
             // 
