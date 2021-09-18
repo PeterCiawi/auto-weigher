@@ -127,6 +127,7 @@ namespace AutoWeigher
 
             public Mains(Lib.AutoWeigher Weigher)
             {
+                this.Load += Mains_Load;
                 weigher = Weigher;
                 weigher.WeightDone += Weigher_WeightDone;
                 weigher.Begin();
@@ -208,14 +209,14 @@ namespace AutoWeigher
                 {
                     this.Controls.Add(btnAdd);
                 }
-                item.Text = cbNama.Text;
-                string Value = Convert.ToString(nmAngka.Value);
-                item.SubItems.Add(Value + "g");
-                listView1.Items.Add(item);
-                string berat = Convert.ToString(weigher);
-                double nm = Convert.ToDouble(nmAngka.Value);
+                //item.Text = cbNama.Text;
+                //string Value = Convert.ToString(nmAngka.Value);
+                //item.SubItems.Add(Value + "g");
+                //listView1.Items.Add(item);
+                //string berat = Convert.ToString(weigher);
+                //double nm = Convert.ToDouble(nmAngka.Value);
 
-                weigher.Weight(nm);
+                //weigher.Weight(nm);
 
             }
 
@@ -234,6 +235,12 @@ namespace AutoWeigher
 
             private void Mains_Load(object sender, EventArgs e)
             {
+                if (!File.Exists(configPath))
+                {
+                    var empty = new List<Resep>();
+                    var emptyJson = JsonSerializer.Serialize(empty);
+                    File.WriteAllText(configPath, emptyJson);
+                }
                 Recipes = loadItems();
                 
                foreach(var items in Recipes)
