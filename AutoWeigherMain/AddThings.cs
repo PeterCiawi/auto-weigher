@@ -16,37 +16,27 @@ namespace AutoWeigher.Main
 {
     public partial class AddThings : Form
     {
-        
-       
-        
         public Resep ResepBaru { get; private set; }
         public AddThings()
         {
             InitializeComponent();
             btnOk.Enabled = false;
-           
         }
 
         public static List<Resep> loadedListSavedItems;
 
-        
         private void btnOk_Click(object sender, EventArgs e)
         {
-            
-            
             Resep resep = new Resep()
             {
                 Nama = txtNm.Text,
                 Code = Convert.ToDouble(nmAngka.Value)
             };
-            
+
             loadedListSavedItems.Add(resep);
             ResepBaru = resep;
-            
-            
+
             this.DialogResult = DialogResult.OK;
-
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -54,19 +44,13 @@ namespace AutoWeigher.Main
             this.DialogResult = DialogResult.Cancel;
         }
 
-        private void AddThings_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void txtNm_TextChanged(object sender, EventArgs e)
         {
-            
+
             decimal nol = 0M;
             if (txtNm.Text != "" & nmAngka.Value != nol)
             {
                 btnOk.Enabled = true;
-                
             }
         }
 
@@ -76,7 +60,6 @@ namespace AutoWeigher.Main
             if (txtNm.Text != "" & nmAngka.Value != nol)
             {
                 btnOk.Enabled = true;
-                
             }
         }
     }
