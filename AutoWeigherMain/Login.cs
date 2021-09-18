@@ -24,7 +24,7 @@ namespace AutoWeigher.Main
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
-            if (txtUN.Text == "AutoWeigher" & txtPass.Text == "Segitiga")
+            if (txtUN.Text == "???" & txtPass.Text == "...")
             {
                 
                 SelectWeight add = new SelectWeight();

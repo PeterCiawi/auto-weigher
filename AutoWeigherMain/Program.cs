@@ -16,7 +16,7 @@ namespace AutoWeigher.Main
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelectWeight());
+            Application.Run(new Login());
         }
     }
 }

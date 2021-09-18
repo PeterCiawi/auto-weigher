@@ -59,7 +59,7 @@ namespace AutoWeigher.Main
             this.cbSelect.Location = new System.Drawing.Point(56, 13);
             this.cbSelect.Name = "cbSelect";
             this.cbSelect.Size = new System.Drawing.Size(121, 21);
-            this.cbSelect.TabIndex = 3;
+            this.cbSelect.TabIndex = 0;
             this.cbSelect.SelectedIndexChanged += new System.EventHandler(this.cbSelect_SelectedIndexChanged);
             this.cbSelect.Click += new System.EventHandler(this.cbSelect_Click);
             // 
@@ -71,7 +71,10 @@ namespace AutoWeigher.Main
             this.Controls.Add(this.cbSelect);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SelectWeight";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Weight";
             this.Load += new System.EventHandler(this.SelectWeight_Load);
             this.ResumeLayout(false);

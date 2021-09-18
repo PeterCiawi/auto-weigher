@@ -49,25 +49,25 @@ namespace AutoWeigher.Main
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(168, 34);
+            this.btnLogin.Location = new System.Drawing.Point(101, 62);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(44, 23);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.Size = new System.Drawing.Size(61, 23);
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtUN
             // 
-            this.txtUN.Location = new System.Drawing.Point(62, 16);
+            this.txtUN.Location = new System.Drawing.Point(62, 10);
             this.txtUN.Name = "txtUN";
             this.txtUN.Size = new System.Drawing.Size(100, 20);
-            this.txtUN.TabIndex = 2;
+            this.txtUN.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 34);
+            this.label2.Location = new System.Drawing.Point(3, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
@@ -75,20 +75,20 @@ namespace AutoWeigher.Main
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(62, 37);
+            this.txtPass.Location = new System.Drawing.Point(62, 36);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(100, 20);
-            this.txtPass.TabIndex = 4;
+            this.txtPass.TabIndex = 1;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // CbEye
             // 
             this.CbEye.AutoSize = true;
-            this.CbEye.Location = new System.Drawing.Point(168, 16);
+            this.CbEye.Location = new System.Drawing.Point(168, 38);
             this.CbEye.Name = "CbEye";
-            this.CbEye.Size = new System.Drawing.Size(44, 17);
-            this.CbEye.TabIndex = 5;
-            this.CbEye.Text = "Eye";
+            this.CbEye.Size = new System.Drawing.Size(53, 17);
+            this.CbEye.TabIndex = 2;
+            this.CbEye.Text = "Show";
             this.CbEye.UseVisualStyleBackColor = true;
             this.CbEye.CheckedChanged += new System.EventHandler(this.CbEye_CheckedChanged);
             // 
@@ -96,14 +96,17 @@ namespace AutoWeigher.Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 62);
+            this.ClientSize = new System.Drawing.Size(218, 91);
             this.Controls.Add(this.CbEye);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUN);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Here ";
             this.ResumeLayout(false);
             this.PerformLayout();
