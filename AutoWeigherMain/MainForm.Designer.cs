@@ -55,9 +55,10 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Location = new System.Drawing.Point(16, 15);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(177, 318);
+            this.listView1.Size = new System.Drawing.Size(235, 390);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -72,9 +73,10 @@
             // 
             // btnTmbh
             // 
-            this.btnTmbh.Location = new System.Drawing.Point(404, 70);
+            this.btnTmbh.Location = new System.Drawing.Point(539, 86);
+            this.btnTmbh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTmbh.Name = "btnTmbh";
-            this.btnTmbh.Size = new System.Drawing.Size(88, 23);
+            this.btnTmbh.Size = new System.Drawing.Size(117, 28);
             this.btnTmbh.TabIndex = 3;
             this.btnTmbh.Text = "Manage Bahan";
             this.btnTmbh.UseVisualStyleBackColor = true;
@@ -82,9 +84,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(506, 70);
+            this.btnAdd.Location = new System.Drawing.Point(675, 86);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(57, 23);
+            this.btnAdd.Size = new System.Drawing.Size(76, 28);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Timbang";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -93,40 +96,44 @@
             // cbNama
             // 
             this.cbNama.FormattingEnabled = true;
-            this.cbNama.Location = new System.Drawing.Point(442, 17);
+            this.cbNama.Location = new System.Drawing.Point(589, 21);
+            this.cbNama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbNama.Name = "cbNama";
-            this.cbNama.Size = new System.Drawing.Size(121, 21);
+            this.cbNama.Size = new System.Drawing.Size(160, 24);
             this.cbNama.TabIndex = 0;
             this.cbNama.SelectedValueChanged += new System.EventHandler(this.cbNama_SelectedValueChanged);
             // 
             // nmAngka
             // 
             this.nmAngka.DecimalPlaces = 2;
-            this.nmAngka.Location = new System.Drawing.Point(443, 44);
+            this.nmAngka.Location = new System.Drawing.Point(591, 54);
+            this.nmAngka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nmAngka.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.nmAngka.Name = "nmAngka";
-            this.nmAngka.Size = new System.Drawing.Size(120, 20);
+            this.nmAngka.Size = new System.Drawing.Size(160, 22);
             this.nmAngka.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(401, 20);
+            this.label1.Location = new System.Drawing.Point(535, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Nama";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(401, 46);
+            this.label2.Location = new System.Drawing.Point(535, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Berat";
             // 
@@ -139,9 +146,10 @@
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(210, 12);
+            this.listView2.Location = new System.Drawing.Point(280, 15);
+            this.listView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(185, 318);
+            this.listView2.Size = new System.Drawing.Size(245, 390);
             this.listView2.TabIndex = 7;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -160,9 +168,9 @@
             // 
             // Mains
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 345);
+            this.ClientSize = new System.Drawing.Size(1335, 506);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -171,6 +179,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnTmbh);
             this.Controls.Add(this.listView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimizeBox = false;
             this.Name = "Mains";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
