@@ -44,7 +44,11 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.nmAngka)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -52,16 +56,18 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Nama,
             this.Berat});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 15);
+            this.listView1.Location = new System.Drawing.Point(4, 4);
             this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(235, 390);
+            this.listView1.Size = new System.Drawing.Size(246, 399);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Nama
             // 
@@ -73,7 +79,7 @@
             // 
             // btnTmbh
             // 
-            this.btnTmbh.Location = new System.Drawing.Point(539, 86);
+            this.btnTmbh.Location = new System.Drawing.Point(17, 81);
             this.btnTmbh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTmbh.Name = "btnTmbh";
             this.btnTmbh.Size = new System.Drawing.Size(117, 28);
@@ -84,7 +90,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(675, 86);
+            this.btnAdd.Location = new System.Drawing.Point(151, 81);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(76, 28);
@@ -96,7 +102,7 @@
             // cbNama
             // 
             this.cbNama.FormattingEnabled = true;
-            this.cbNama.Location = new System.Drawing.Point(589, 21);
+            this.cbNama.Location = new System.Drawing.Point(67, 16);
             this.cbNama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbNama.Name = "cbNama";
             this.cbNama.Size = new System.Drawing.Size(160, 24);
@@ -106,7 +112,7 @@
             // nmAngka
             // 
             this.nmAngka.DecimalPlaces = 2;
-            this.nmAngka.Location = new System.Drawing.Point(591, 54);
+            this.nmAngka.Location = new System.Drawing.Point(69, 49);
             this.nmAngka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nmAngka.Maximum = new decimal(new int[] {
             1000000,
@@ -120,7 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(535, 25);
+            this.label1.Location = new System.Drawing.Point(13, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
@@ -130,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(535, 57);
+            this.label2.Location = new System.Drawing.Point(13, 52);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
@@ -143,13 +149,14 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(280, 15);
+            this.listView2.Location = new System.Drawing.Point(258, 4);
             this.listView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(245, 390);
+            this.listView2.Size = new System.Drawing.Size(246, 399);
             this.listView2.TabIndex = 7;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -166,28 +173,53 @@
             // 
             this.columnHeader3.Text = "Hasil";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listView1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listView2, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(758, 407);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cbNama);
+            this.panel1.Controls.Add(this.btnTmbh);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.nmAngka);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(511, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(244, 401);
+            this.panel1.TabIndex = 0;
+            // 
             // Mains
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1335, 506);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.nmAngka);
-            this.Controls.Add(this.cbNama);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnTmbh);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(758, 407);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimizeBox = false;
             this.Name = "Mains";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Form";
             this.Load += new System.EventHandler(this.Mains_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmAngka)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
             }
 
@@ -206,6 +238,8 @@
             private System.Windows.Forms.ColumnHeader columnHeader1;
             private System.Windows.Forms.ColumnHeader columnHeader2;
             private System.Windows.Forms.ColumnHeader columnHeader3;
+            private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+            private System.Windows.Forms.Panel panel1;
         }
     }
 }

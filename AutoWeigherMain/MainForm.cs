@@ -149,7 +149,7 @@ namespace AutoWeigher
                 Resep YgDipilih = (Resep)cbNama.SelectedItem;
                 nmAngka.Value = Convert.ToDecimal(YgDipilih.Code);
                 btnAdd.Enabled = true;
-                this.Controls.Add(btnAdd);
+                
             }
 
             private void Mains_Load(object sender, EventArgs e)
@@ -168,6 +168,11 @@ namespace AutoWeigher
                     cbNama.Items.Add(items);
 
                 }
+            }
+
+            private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
             }
         }
     }
