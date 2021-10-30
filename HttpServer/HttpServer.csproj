@@ -9,4 +9,8 @@
     <PackageReference Include="Grapevine" Version="5.0.0-rc.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Types\Types.csproj" />
+  </ItemGroup>
+
 </Project>

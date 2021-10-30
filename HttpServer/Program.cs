@@ -3,12 +3,13 @@ using Grapevine;
 using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
+using Types;
 
 namespace HttpServer
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             Run();
             Console.WriteLine("Built");
@@ -44,7 +45,7 @@ namespace HttpServer
             }
             else
             {
-                List<Resep> emptyList = new List<Resep>();
+                List<Resep> emptyList = new();
                 File.WriteAllText(configPath, JsonSerializer.Serialize(emptyList));
                 Run();
             }

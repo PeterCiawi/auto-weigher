@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWeigherMain", "AutoWeig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWeigherDemo", "AutoWeigherTester\AutoWeigherDemo.csproj", "{59CB68BA-18DD-4655-B870-8AF26B93EB13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpServer", "HttpServer\HttpServer.csproj", "{640E3A1C-84DD-4B80-99FC-FE9EF9FFAB19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Types", "Types\Types.csproj", "{D65D348D-CAED-4D44-90A1-0F5E60722998}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{59CB68BA-18DD-4655-B870-8AF26B93EB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59CB68BA-18DD-4655-B870-8AF26B93EB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59CB68BA-18DD-4655-B870-8AF26B93EB13}.Release|Any CPU.Build.0 = Release|Any CPU
-		{640E3A1C-84DD-4B80-99FC-FE9EF9FFAB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{640E3A1C-84DD-4B80-99FC-FE9EF9FFAB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{640E3A1C-84DD-4B80-99FC-FE9EF9FFAB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{640E3A1C-84DD-4B80-99FC-FE9EF9FFAB19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65D348D-CAED-4D44-90A1-0F5E60722998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65D348D-CAED-4D44-90A1-0F5E60722998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65D348D-CAED-4D44-90A1-0F5E60722998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65D348D-CAED-4D44-90A1-0F5E60722998}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

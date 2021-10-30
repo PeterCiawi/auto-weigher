@@ -14,7 +14,7 @@ namespace AutoWeigherTester
         {
             Console.WriteLine("Avalible ports :");
             int x = 0;
-             for (int i = 0; i < AutoWeigher.Lib.AutoWeigher.PortNames.Length; i++) 
+              for (int i = 0; i < AutoWeigher.Lib.AutoWeigher.PortNames.Length; i++) 
              {
                 Console.WriteLine(i + 1 + " " + AutoWeigher.Lib.AutoWeigher.PortNames[i]);
                 x = i;

@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace AutoWeigher.Main
 {
+    
     public partial class SelectWeight : Form
     {
+        public string IP { get; set; }
+
         public Lib.AutoWeigher Weigher { get; set; }
         
 
@@ -33,10 +36,10 @@ namespace AutoWeigher.Main
         private void btnOk_Click(object sender, EventArgs e)
         {
             Weigher = new Lib.AutoWeigher(cbSelect.Text);
-            Mains adds = new Mains(Weigher);
+            Mains adds = new Mains(Weigher, TxtIP.Text);
             this.Hide();
             adds.Show();
-            if (cbSelect.Text == "")
+            if (cbSelect.Text == "" && TxtIP.Text == "")
             {
                 this.Controls.Add(btnOk);
             }
@@ -79,6 +82,11 @@ namespace AutoWeigher.Main
                 cbSelect.Items.Add(AutoWeigher.Lib.AutoWeigher.PortNames[i]);
                 x = i;
             }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

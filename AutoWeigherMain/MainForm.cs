@@ -6,6 +6,9 @@ using AutoWeigher.Lib;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Types;
 
 namespace AutoWeigher
 {
@@ -17,6 +20,8 @@ namespace AutoWeigher
             Queue<Tuple<string, double, double?>> antrian = new Queue<Tuple<string, double, double?>>();
 
             public List<Resep> Recipes = new List<Resep>();
+            public string IpAddress { get; set; }
+
 
             void saveItems()
             {
@@ -70,10 +75,21 @@ namespace AutoWeigher
                     weigher.Weight(antrian.Peek().Item2);
                 }
             }
-
+            async Task<List<Resep>> GetResep()
+            {
+                List<Resep> resep = new List<Resep>();
+                using(HttpClient client = new HttpClient())
+                {
+                    HttpRequestMessage Message = new HttpRequestMessage(HttpMethod.Get,$"http://{IpAddress}:8888/resep");
+                    var res = await client.SendAsync(Message);
+                    string responseJson = await res.Content.ReadAsStringAsync( );
+                    resep = JsonSerializer.Deserialize<List<Resep>>(responseJson);
+                }
+                return resep;
+            }    
             public readonly static string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.json");
 
-            public Mains(Lib.AutoWeigher Weigher)
+            public Mains(Lib.AutoWeigher Weigher, string ip)
             {
                 this.Load += Mains_Load;
                 weigher = Weigher;
@@ -81,6 +97,7 @@ namespace AutoWeigher
                 weigher.Begin();
                 InitializeComponent();
                 btnAdd.Enabled = false;
+                IpAddress = ip;
             }
 
             private void Weigher_WeightDone(object sender, WeightDoneArgs e)
@@ -100,7 +117,9 @@ namespace AutoWeigher
                         listView2.Items.Add(thing);
                         Weight();
                     });
+                    
                 }
+                
             }
 
             private void btnTmbh_Click(object sender, EventArgs e)
@@ -147,12 +166,12 @@ namespace AutoWeigher
             private void cbNama_SelectedValueChanged(object sender, EventArgs e)
             {
                 Resep YgDipilih = (Resep)cbNama.SelectedItem;
-                nmAngka.Value = Convert.ToDecimal(YgDipilih.Code);
+                nmAngka.Value = Convert.ToDecimal(YgDipilih.Berat);
                 btnAdd.Enabled = true;
                 
             }
 
-            private void Mains_Load(object sender, EventArgs e)
+            private async void Mains_Load(object sender, EventArgs e)
             {
 
                 if (!File.Exists(configPath))
@@ -161,8 +180,9 @@ namespace AutoWeigher
                     var emptyJson = JsonSerializer.Serialize(empty);
                     File.WriteAllText(configPath, emptyJson);
                 }
-                Recipes = loadItems();
+                //Recipes = loadItems();
 
+                Recipes = await GetResep();
                 foreach (var items in Recipes)
                 {
                     cbNama.Items.Add(items);
