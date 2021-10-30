@@ -21,27 +21,26 @@ namespace HttpServer
         {
             if (File.Exists(configPath))
             {
-            var server = RestServerBuilder.UseDefaults().Build();
-            server.Prefixes.Clear();
-            server.Prefixes.Add("http://+:8888/");
-            var getResepRoute = new Route(async (context) =>
-            {
-                context.Response.StatusCode = HttpStatusCode.Ok;
-                context.Response.ContentType = ContentType.Json;
-                await context.Response.SendResponseAsync(File.ReadAllText(configPath));
-            }, "Get", "/resep");
-            var setResepRoute = new Route(async(context) =>
-            {
-                Stream stream = context.Request.InputStream;
-                Resep resep = await JsonSerializer.DeserializeAsync<Resep>(stream);
-                List<Resep> listInConfigFile = JsonSerializer.Deserialize<List<Resep>>(File.ReadAllText(configPath));
-                listInConfigFile.Add(resep);
-                File.WriteAllText(configPath, JsonSerializer.Serialize(listInConfigFile));
-                await context.Response.SendResponseAsync(HttpStatusCode.Accepted);
-            },"Post","/resep");
-            server.Router.Register(setResepRoute);
-            server.Router.Register(getResepRoute);
-            server.Run();
+                var server = RestServerBuilder.UseDefaults().Build();
+                server.Prefixes.Clear();
+                server.Prefixes.Add("http://+:8888/");
+                var getResepRoute = new Route(async (context) =>
+                {
+                    context.Response.StatusCode = HttpStatusCode.Ok;
+                    context.Response.ContentType = ContentType.Json;
+                    await context.Response.SendResponseAsync(File.ReadAllText(configPath));
+                }, "Get", "/resep");
+                var setResepRoute = new Route(async (context) =>
+                {
+                    Resep resep = await JsonSerializer.DeserializeAsync<Resep>(context.Request.InputStream);
+                    List<Resep> listInConfigFile = JsonSerializer.Deserialize<List<Resep>>(File.ReadAllText(configPath));
+                    listInConfigFile.Add(resep);
+                    File.WriteAllText(configPath, JsonSerializer.Serialize(listInConfigFile));
+                    await context.Response.SendResponseAsync(HttpStatusCode.Accepted);
+                }, "Post", "/resep");
+                server.Router.Register(setResepRoute);
+                server.Router.Register(getResepRoute);
+                server.Run();
             }
             else
             {
