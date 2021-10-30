@@ -10,7 +10,10 @@ using System.Windows.Forms;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
-
+using System.Net.Http;
+using System.Threading;
+using Newtonsoft.Json;
+using Types;
 
 namespace AutoWeigher.Main
 {
@@ -24,19 +27,43 @@ namespace AutoWeigher.Main
         }
 
         public static List<Resep> loadedListSavedItems;
+        readonly string baseUrl = "http://192.168.100.10:8888";
 
+        public async void SaveResep(Resep resep)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, $"{baseUrl}/resep");
+                string resepJson = JsonConvert.SerializeObject(resep);
+                message.Content = new StringContent(resepJson);
+                var responseMessage = await client.SendAsync(message);
+
+                try
+                {
+                    responseMessage.EnsureSuccessStatusCode();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Data tidak berhasil disimpan. {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+      
         private void btnOk_Click(object sender, EventArgs e)
         {
-            Resep resep = new Resep()
+            Types.Resep resep = new Types.Resep()
             {
                 Nama = txtNm.Text,
-                Code = Convert.ToDouble(nmAngka.Value)
+                Berat = Convert.ToDouble(nmAngka.Value)
             };
 
             loadedListSavedItems.Add(resep);
             ResepBaru = resep;
-
             this.DialogResult = DialogResult.OK;
+            var newresep = resep;
+
+            SaveResep(newresep);
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
