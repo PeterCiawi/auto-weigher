@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Types;
 
 namespace AutoWeigher
 {
@@ -165,7 +166,7 @@ namespace AutoWeigher
             private void cbNama_SelectedValueChanged(object sender, EventArgs e)
             {
                 Resep YgDipilih = (Resep)cbNama.SelectedItem;
-                nmAngka.Value = Convert.ToDecimal(YgDipilih.Code);
+                nmAngka.Value = Convert.ToDecimal(YgDipilih.Berat);
                 btnAdd.Enabled = true;
                 
             }
